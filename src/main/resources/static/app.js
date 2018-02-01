@@ -33,11 +33,11 @@ function disconnect() {
     console.log("Disconnected");
 }
 
-function sendName() {
+function sendName() {//一对多
     stompClient.send("/app/hello", {}, JSON.stringify({'name': $("#name").val()}));
 }
 
-function sendName1() {
+function sendName1() {//一对一
     stompClient.send("/app/message", {}, JSON.stringify({'name': $("#name").val()}));
 }
 
